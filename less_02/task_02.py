@@ -5,18 +5,17 @@
 
 
 def guess_the_number(s: int, p: int) -> str:
-    try:
-        x = (s - int((s ** 2 - 4 * p) ** 0.5)) // 2
-        y = (s + int((s ** 2 - 4 * p) ** 0.5)) // 2
-        return f'Загаданные числа: {x} и {y}'
-    except TypeError as e:
-        return f'Вы допустили ошибку {e}'
+    x = (s - int((s ** 2 - 4 * p) ** 0.5)) // 2
+    y = (s + int((s ** 2 - 4 * p) ** 0.5)) // 2
+    return f'Загаданные числа: {x} и {y}'
 
 
-s = int(input('Введите сумму чисел: '))
-p = int(input('Введите произведение чисел: '))
-
-if s and p < 1000:
-    print(guess_the_number(s, p))
-else:
-    print('Введите число менее 1000!')
+try:
+    s = int(input('Введите сумму чисел: '))
+    p = int(input('Введите произведение чисел: '))
+    if (s and p) < 1000:
+        print(guess_the_number(s, p))
+    else:
+        print('Введите числа менее 1000.')
+except ValueError:
+    print('Что-то пошло не так. Повторите попытку.')
