@@ -16,10 +16,7 @@ from random import randint
 def blueberries(count_bush: int, bush_number: int) -> int:
     beds = list(randint(5, 10) for i in range(count_bush))
     print(beds)
-    if bush_number == 1:
-        result = beds[0] + beds[1] + beds[2]
-    else:
-        result = beds[bush_number] + beds[bush_number - 1] + beds[bush_number - 2]
+    result = beds[bush_number] + beds[bush_number - 1] + beds[bush_number - 2]
     return result
 
 
